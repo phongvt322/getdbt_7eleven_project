@@ -1,0 +1,13 @@
+seven_eleven_project: # this needs to match the profile: in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /home/brick/meltano-7-eleven-projects/meltano-7-eleven-project/client_secrets.json # replace this with the full path to your keyfile
+      project: civil-clarity-205812 # Replace this with your project id
+      dataset: experiment_phong # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
